@@ -18,12 +18,17 @@ const types = [
 type IconProps = {
   type: (typeof types)[number];
   style?: string;
+  size?: string;
 };
 
-export function Icon({ type, style = "w-7 aspect-square" }: IconProps) {
+export default function Icon({
+  type,
+  size = "w-7 aspect-square",
+  style,
+}: IconProps) {
   return (
     <>
-      <svg className={style}>
+      <svg className={`${size} ${style}`}>
         <use href={`/sprite.svg#${type}`}></use>
       </svg>
     </>
