@@ -21,14 +21,10 @@ type IconProps = {
   size?: string;
 };
 
-export default function Icon({
-  type,
-  size = "w-7 aspect-square",
-  style,
-}: IconProps) {
+export default function Icon({ type, size = "w-7", style }: IconProps) {
   return (
     <>
-      <svg className={`${size} ${style}`}>
+      <svg className={`${size} aspect-square ${style}`}>
         <use href={`/sprite.svg#${type}`}></use>
       </svg>
     </>
