@@ -1,4 +1,4 @@
-const types = [
+export const iconTypes = [
   "calendar",
   "check",
   "chevron",
@@ -16,12 +16,12 @@ const types = [
 ] as const;
 
 type IconProps = {
-  type: (typeof types)[number];
+  type: (typeof iconTypes)[number];
   style?: string;
   size?: string;
 };
 
-export default function Icon({ type, size = "w-7", style }: IconProps) {
+export function Icon({ type, size = "w-7", style }: IconProps) {
   return (
     <>
       <svg className={`${size} aspect-square ${style}`}>

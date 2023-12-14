@@ -1,23 +1,20 @@
-import "./components/Icon.tsx";
-import Icon from "./components/Icon.tsx";
+import Avatar from "./components/Avatar/Avatar.tsx";
+import "./components/Icon/Icon.tsx";
 
 function App() {
   return (
     <>
-      <Icon type="calendar" />
-      <Icon type="check" />
-      <Icon type="chevron" />
-      <Icon type="close" />
-      <Icon type="eyeClosed" />
-      <Icon type="eyeOpened" />
-      <Icon type="logout" />
-      <Icon type="minus" />
-      <Icon type="plus" />
-      <Icon type="question" />
-      <Icon type="thumbsDown" />
-      <Icon type="thumbsUp" />
-      <Icon type="upload" />
-      <Icon type="user" />
+      <div className="pt-12 grid grid-cols-5 ">
+        <Avatar letter="A" />
+        <Avatar image="/avatar/img/avatar-08.png" />
+        <Avatar
+          image="/avatar/img/avatar-06.png"
+          status="idle"
+          isSantaHat={true}
+        />
+        <Avatar icon="eyeClosed" />
+        <Avatar image="/avatar/img/avatar-03.png" isSantaHat={true} />
+      </div>
     </>
   );
 }
