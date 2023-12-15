@@ -1,9 +1,9 @@
-import Login from "./pages/authentication/Login.tsx";
+import Authentication from "./pages/authentication/Authentication.tsx";
 
 function App() {
   return (
     <>
-      <Login />
+      <Authentication type="login" />
     </>
   );
 }
