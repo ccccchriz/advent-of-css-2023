@@ -9,6 +9,7 @@ function App() {
         <Input type="tel" />
         <Input type="number" />
         <Input type="text" />
+        <Input type="password" />
       </div>
     </>
   );
