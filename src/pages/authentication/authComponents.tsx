@@ -15,7 +15,10 @@ export const authComponents = {
             SUBMIT
           </button>
         </form>
-        <a href="" className="text-2xl font-sans underline font-medium">
+        <a
+          href=""
+          className="text-2xl font-sans underline font-medium  dark:text-white"
+        >
           Need an account?
         </a>
       </>
