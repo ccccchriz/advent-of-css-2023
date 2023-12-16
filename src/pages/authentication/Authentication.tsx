@@ -6,7 +6,7 @@ type authProps = {
 
 export default function Authentication({ type }: authProps) {
   return (
-    <main className="w-full min-h-screen bg-[url('/website/bg__auth.svg')] bg-cover bg-no-repeat grid place-items-center bg-silverTree dark:bg-nileBlue">
+    <main className="w-full min-h-screen lg:bg-[url('/website/bg__auth.svg')] bg-cover bg-no-repeat grid place-items-center bg-silverTree dark:bg-nileBlue">
       <section className="grid place-items-center gap-4 w-full max-w-xl px-4">
         <h1 className="sr-only">Secret Santa</h1>
         <img src="/website/logo__secret-santa.svg" alt="" />

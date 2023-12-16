@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <>
       <footer className="min-h-[20rem] w-full grid place-items-center text-scotchMist dark:text-turquoiseGreen bg-acadia dark:bg-blackPearl pt-8 pb-4 gap-2 bottom-0 fixed -z-20">
-        <div className="grid place-items-center gap-2">
+        <div className="grid place-items-center gap-2 text-center">
           <img
             src="/website/logo__secret-santa--small.svg"
             alt=""

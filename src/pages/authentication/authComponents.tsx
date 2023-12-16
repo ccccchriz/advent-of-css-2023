@@ -17,7 +17,7 @@ export const authComponents = {
         </form>
         <a
           href=""
-          className="text-2xl font-sans underline font-medium  dark:text-white"
+          className="text-2xl font-sans underline font-medium  dark:text-white mb-8"
         >
           Need an account?
         </a>
