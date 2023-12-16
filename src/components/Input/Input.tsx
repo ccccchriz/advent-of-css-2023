@@ -45,6 +45,7 @@ export default function Input({ type = "text", id }: inputProp) {
         </span>
         {type == "password" && (
           <button
+            type="button"
             id="passwordButton"
             className="absolute self-center right-1 p-4"
             onClick={() => {
