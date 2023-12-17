@@ -60,65 +60,35 @@
 */
 
 .menuButton1 {
-  animation: menuButton1 0.1s linear;
   transform-origin: center left;
   transform: translateY(-0.5rem) rotate(40deg) scaleX(1.25);
 }
 
 .menuButton1--reverse {
-  animation: menuButton1--reverse 0.1s linear;
   transform-origin: center left;
   transform: translateY(-0.5rem) rotate(0deg) scaleX(1);
 }
 
-@keyframes menuButton1 {
-  from {
-    transform: translateY(-0.5rem) rotate(0deg) scaleX(1);
-  }
-
-  to {
-    transform: translateY(-0.5rem) rotate(40deg) scaleX(1.25);
-  }
-}
-
-@keyframes menuButton1--reverse {
-  from {
-    transform: translateY(-0.5rem) rotate(40deg) scaleX(1.25);
-  }
-
-  to {
-    transform: translateY(-0.5rem) rotate(0deg) scaleX(1);
-  }
-}
-
 .menuButton3 {
-  animation: menuButton3 0.1s linear;
   transform-origin: center left;
   transform: translateY(0.5rem) rotate(-40deg) scaleX(1.25);
 }
 
 .menuButton3--reverse {
-  animation: menuButton3--reverse 0.1s linear;
   transform-origin: center left;
   transform: translateY(0.5rem) rotate(0deg) scaleX(1);
 }
 
-@keyframes menuButton3 {
-  from {
-    transform: translateY(0.5rem) rotate(0deg) scaleX(1);
-  }
+/* 
+  Menu slide in animation
+*/
 
-  to {
-    transform: translateY(0.5rem) rotate(-40deg) scaleX(1.25);
-  }
+.menuSlideIn {
+  transform: translateX(0%);
+  visibility: visible;
 }
 
-@keyframes menuButton3--reverse {
-  from {
-    transform: translateY(0.5rem) rotate(-40deg) scaleX(1.25);
-  }
-
-  to {
-    transform: translateY(0.5rem) rotate(0deg) scaleX(1);
-  }
+.menuSlideIn--reverse {
+  visibility: hidden;
+  transform: translateX(-100%);
 }

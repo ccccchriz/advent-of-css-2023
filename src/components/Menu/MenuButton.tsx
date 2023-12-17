@@ -1,45 +1,39 @@
-import { useState, useRef } from "react";
+import { forwardRef } from "react";
 
-export default function MenuButton() {
-  const [isExpanded, setIsExpanded] = useState(false);
+type menuButtonProps = {
+  isExpanded: boolean;
+  setIsExpanded: Function;
+};
 
-  let firstRender = useRef(true);
+const MenuButton = forwardRef<HTMLButtonElement, menuButtonProps>(
+  function MenuButton({ isExpanded, setIsExpanded }, ref) {
+    return (
+      <button
+        ref={ref}
+        type="button"
+        aria-expanded={`${isExpanded}`}
+        className="w-8 aspect-square bg-supernova grid place-items-center"
+        onClick={() => {
+          setIsExpanded((value: boolean) => !value);
+        }}
+      >
+        <span className="sr-only">menu</span>
+        <div
+          className={`w-5 h-1 bg-black absolute -translate-y-2 transition-all duration-300 ${
+            isExpanded ? "menuButton1" : "menuButton1--reverse"
+          }`}
+        ></div>
+        <div
+          className={`w-5 h-1 bg-black absolute ${isExpanded ? "hidden" : ""}`}
+        ></div>
+        <div
+          className={`w-5 h-1 bg-black absolute translate-y-2 transition-all duration-300 ${
+            isExpanded ? "menuButton3" : "menuButton3--reverse"
+          }`}
+        ></div>
+      </button>
+    );
+  }
+);
 
-  const ret = (
-    <button
-      type="button"
-      aria-expanded={`${isExpanded}`}
-      className="w-8 aspect-square bg-supernova grid place-items-center"
-      onClick={() => setIsExpanded((value) => !value)}
-    >
-      <span className="sr-only">menu</span>
-      <div
-        className={`w-5 h-1 bg-black absolute -translate-y-2 ${
-          firstRender.current
-            ? ""
-            : isExpanded
-            ? "menuButton1"
-            : "menuButton1--reverse"
-        }`}
-      ></div>
-      <div
-        className={`w-5 h-1 bg-black absolute ${
-          firstRender.current ? "" : isExpanded ? "hidden" : ""
-        }`}
-      ></div>
-      <div
-        className={`w-5 h-1 bg-black absolute translate-y-2 ${
-          firstRender.current
-            ? ""
-            : isExpanded
-            ? "menuButton3"
-            : "menuButton3--reverse"
-        }`}
-      ></div>
-    </button>
-  );
-
-  firstRender.current = false;
-
-  return ret;
-}
+export default MenuButton;
