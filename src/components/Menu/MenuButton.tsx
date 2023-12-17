@@ -5,8 +5,6 @@ export default function MenuButton() {
 
   let firstRender = useRef(true);
 
-  console.log(firstRender);
-
   const ret = (
     <button
       type="button"
