@@ -21,9 +21,9 @@ export default function Menu() {
 
   return (
     <>
-      <div className="lg:max-w-md grid">
+      <div className="lg:max-w-md grid absolute">
         <div
-          className={`p-4 z-50 right-0 md:left-0 w-min ${
+          className={`p-4 z-50 left-0 w-min ${
             isExpanded ? "fixed" : "absolute"
           }`}
         >
@@ -34,20 +34,20 @@ export default function Menu() {
           />
         </div>
         <div
-          className={`w-full md:max-w-sm min-h-[100dvh] bg-supernova z-40 fixed top-0 flex flex-col box-border transition-all duration-300 ${
+          className={`w-full md:max-w-[22rem] min-h-[100dvh] bg-supernova z-40 fixed top-0 flex flex-col transition-all duration-300 ${
             isExpanded ? "menuSlideIn" : "menuSlideIn--reverse"
           }`}
         >
-          <nav className="w-full mt-16 flex flex-col text-6xl px-6 gap-4 font-condensed">
+          <nav className="w-full mt-16 flex flex-col text-5xl px-6 gap-4 font-condensed">
             <a href="">DASHBOARD</a>
             <a href="">OUR EVENT</a>
             <a href="">MY WISH LIST</a>
           </nav>
-          <div className="w-full flex flex-col px-6 mt-auto mb-8">
-            <span className="font-condensed text-spanishGreen text-5xl mb-4">
+          <div className="w-full flex flex-col px-6 mt-auto mb-4">
+            <span className="font-condensed text-spanishGreen text-4xl mb-2">
               PAST EVENTS
             </span>
-            <span className="font-sans font-bold text-3xl">
+            <span className="font-sans font-bold text-2xl">
               Balthis Christmas
             </span>
             <span className="font-sans">23 December 2023</span>

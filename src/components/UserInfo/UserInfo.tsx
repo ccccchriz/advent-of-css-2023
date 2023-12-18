@@ -3,9 +3,10 @@ import { Icon } from "../Icon/Icon.tsx";
 
 type UseInfoProp = {
   avatar: string;
+  name: string;
 };
 
-export default function UserInfo({ avatar }: UseInfoProp) {
+export default function UserInfo({ avatar, name }: UseInfoProp) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const button = useRef<HTMLButtonElement>(null);
@@ -34,20 +35,24 @@ export default function UserInfo({ avatar }: UseInfoProp) {
         onClick={() => setIsExpanded((value) => !value)}
         ref={button}
       >
-        <Icon type="chevron" />
-        <img src={avatar} alt="" className="border-2 border-white"></img>
-        <p className="flex flex-col text-left font-sans">
+        <Icon type="chevron" style="dark:fill-white" />
+        <img
+          src={avatar}
+          alt=""
+          className="border-2 border-white rounded-full"
+        ></img>
+        <p className="flex flex-col text-left font-sans dark:text-white">
           <span className="sr-only">user options</span>
           <span className="text-sm">Logged in as</span>
-          <strong className="text-xl">Cody Fisher</strong>
+          <strong className="text-xl">{name}</strong>
         </p>
       </button>
       <nav
-        className={`top-24 right-6 bg-white p-4  ${
+        className={`top-24 right-6 bg-white p-4 dark:bg-blackPearl dark:text-white  ${
           isExpanded ? "absolute" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-3 ">
           <li>
             <a href="" className="flex gap-4 text-3xl font-condensed">
               <Icon type="user" style="fill-pastelMagenta" />
