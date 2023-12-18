@@ -11,7 +11,6 @@ export default function Menu() {
       if (isExpanded == true && e.key == "Escape") {
         if (button.current != null) button.current.focus();
         setIsExpanded(false);
-      } else {
       }
     };
 
@@ -24,7 +23,7 @@ export default function Menu() {
     <>
       <div className="lg:max-w-md grid">
         <div
-          className={`p-4 z-50 right-0 md:left-0 ${
+          className={`p-4 z-50 right-0 md:left-0 w-min ${
             isExpanded ? "fixed" : "absolute"
           }`}
         >
