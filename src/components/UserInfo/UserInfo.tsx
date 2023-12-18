@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Icon } from "../Icon/Icon.tsx";
+import Avatar from "../Avatar/Avatar.tsx";
 
 type UseInfoProp = {
   avatar: string;
@@ -36,11 +37,7 @@ export default function UserInfo({ avatar, name }: UseInfoProp) {
         ref={button}
       >
         <Icon type="chevron" style="dark:fill-white" />
-        <img
-          src={avatar}
-          alt=""
-          className="border-2 border-white rounded-full"
-        ></img>
+        <Avatar image={avatar} size="max-w-[3.75rem]" />
         <p className="flex flex-col text-left font-sans dark:text-white">
           <span className="sr-only">user options</span>
           <span className="text-sm">Logged in as</span>

@@ -1,11 +1,9 @@
-import Checkbox from "./components/Input/Checkbox";
+import MainLayout from "./pages/MainLayout";
 
 function App() {
   return (
     <>
-      <div className="bg-red-500 h-screen w-full grid place-items-center">
-        <Checkbox label="Accept" />
-      </div>
+      <MainLayout />
     </>
   );
 }

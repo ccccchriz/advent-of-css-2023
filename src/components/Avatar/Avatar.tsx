@@ -1,9 +1,16 @@
 import { Icon, iconTypes } from "../Icon/Icon.tsx";
-<div className="w6"></div>;
 // key - size, 0-border, 1-text, [2, 3]-status[size, style], 4 - santa hat
 const sizes = {
   "max-w-[6rem]": [
     "border-[6px]",
+    "text-4xl",
+    "max-w-[25%]",
+    "border-2 right-[-0.125rem] bottom-[-0.125rem] p-[0.125rem]",
+    "top-[-1.625rem] right-[-1.125rem] w-[4.1875rem]",
+  ],
+
+  "max-w-[3.75rem]": [
+    "border-[2px]",
     "text-4xl",
     "max-w-[25%]",
     "border-2 right-[-0.125rem] bottom-[-0.125rem] p-[0.125rem]",
@@ -49,7 +56,7 @@ export default function Avatar({
     return (
       <>
         <div
-          className={`${size} aspect-square bg-spanishGreen rounded-full grid place-items-center ${sizes[size][0]} border-white text-white ${sizes[size][1]} font-bold font-sans relative`}
+          className={`w-full ${size} aspect-square bg-spanishGreen rounded-full grid place-items-center ${sizes[size][0]} border-white text-white ${sizes[size][1]} font-bold font-sans relative`}
         >
           {!image && letter}
           {image && <img alt="" src={image} className="w-full"></img>}
