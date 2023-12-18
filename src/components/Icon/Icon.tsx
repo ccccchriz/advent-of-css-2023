@@ -25,7 +25,7 @@ export function Icon({ type, size = "w-7", style }: IconProps) {
   return (
     <>
       <svg className={`${size} aspect-square ${style}`}>
-        <use href={`/sprite.svg#${type}`}></use>
+        <use href={`icons/sprite.svg#${type}`}></use>
       </svg>
     </>
   );
