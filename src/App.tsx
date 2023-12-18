@@ -1,9 +1,11 @@
-import MainLayout from "./pages/MainLayout.tsx";
+import Checkbox from "./components/Input/Checkbox";
 
 function App() {
   return (
     <>
-      <MainLayout />
+      <div className="bg-red-500 h-screen w-full grid place-items-center">
+        <Checkbox label="Accept" />
+      </div>
     </>
   );
 }
