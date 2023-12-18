@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Icon } from "../Icon/Icon";
 
 type inputProp = {
-  type: "text" | "url" | "number" | "tel" | "email" | "password";
+  type: "text" | "url" | "number" | "tel" | "email" | "password" | "file";
   id?: number;
 };
 
@@ -11,7 +11,7 @@ export default function Input({ type = "text", id }: inputProp) {
   if (id) htmlId += id;
   if (type == "email") {
     return (
-      <label className="w-full relative grid">
+      <label className="w-full relative grid cursor-pointer">
         <input
           type={type}
           id={htmlId}
@@ -26,11 +26,33 @@ export default function Input({ type = "text", id }: inputProp) {
         </span>
       </label>
     );
+  } else if (type == "file") {
+    return (
+      <label className="w-full relative grid cursor-pointer items-center border-8 border-dashed border-white">
+        <input
+          type={type}
+          id={htmlId}
+          name={htmlId}
+          size={1}
+          placeholder=" "
+          className={`p-6 w-full text-[1.6875rem] opacity-0 cursor-pointer`}
+        />
+        <span className="w-full absolute p-6 flex justify-between items-center">
+          <span className="uppercase font-handwriting text-3xl text-white font-bold">
+            avatar
+          </span>
+          <span className="text-2xl font-sans text-slate-500">
+            Click to add image
+          </span>
+          <Icon type="upload" size="w-12" style="fill-white" />
+        </span>
+      </label>
+    );
   } else if (type == "password") {
     const [t, setT] = useState("password");
     const [i, setI] = useState<"eyeClosed" | "eyeOpened">("eyeClosed");
     return (
-      <label className="w-full relative grid">
+      <label className="w-full relative grid cursor-pointer">
         <input
           type={t}
           id={htmlId}
@@ -66,7 +88,7 @@ export default function Input({ type = "text", id }: inputProp) {
     );
   } else {
     return (
-      <label className="w-full relative grid">
+      <label className="w-full relative grid cursor-pointer">
         <input
           type={type}
           id={htmlId}
