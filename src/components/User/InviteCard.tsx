@@ -23,8 +23,8 @@ export default function InviteCard({
       ) : (
         <Avatar letter={letter ? letter : "A"} status={status} />
       )}
-      <div className="flex -ml-10 pl-14 py-4 self pr-2 justify-between  w-full">
-        <p className="flex flex-col">
+      <div className="flex -ml-20 pl-24 py-4 self pr-2 justify-between w-full bg-white">
+        <p className="flex flex-col ">
           <span className="text-4xl font-sans font-bold">{name}</span>
           <span className="font-sans">{mail}</span>
         </p>

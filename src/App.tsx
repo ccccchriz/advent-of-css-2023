@@ -3,7 +3,7 @@ import InviteCard from "./components/User/InviteCard";
 function App() {
   return (
     <>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 bg-red-500 gap-12 py-12 px-4">
         <InviteCard
           letter="S"
           status="online"
