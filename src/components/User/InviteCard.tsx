@@ -17,14 +17,14 @@ export default function InviteCard({
   mail,
 }: InviteCardProps) {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center w-full">
       {avatar ? (
         <Avatar image={avatar} status={status} />
       ) : (
         <Avatar letter={letter ? letter : "A"} status={status} />
       )}
-      <div className="flex -ml-10 pl-14 py-4 self pr-2 justify-between">
-        <p className="flex flex-col w-full ">
+      <div className="flex -ml-10 pl-14 py-4 self pr-2 justify-between  w-full">
+        <p className="flex flex-col">
           <span className="text-4xl font-sans font-bold">{name}</span>
           <span className="font-sans">{mail}</span>
         </p>
