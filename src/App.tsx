@@ -1,9 +1,16 @@
-import MainLayout from "./pages/MainLayout";
+import InviteCard from "./components/User/InviteCard";
 
 function App() {
   return (
     <>
-      <MainLayout />
+      <div className="grid grid-cols-1 w-full">
+        <InviteCard
+          letter="S"
+          status="online"
+          name="Stever Rogers"
+          mail="captainamerica24@avengers.com"
+        />
+      </div>
     </>
   );
 }

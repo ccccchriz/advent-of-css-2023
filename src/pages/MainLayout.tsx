@@ -1,6 +1,6 @@
 import Footer from "../components/Footer/Footer";
 import Menu from "../components/Menu/Menu.tsx";
-import UserInfo from "../components/UserInfo/UserInfo.tsx";
+import UserInfo from "../components/User/UserWithDropdown.tsx";
 
 export default function MainLayout() {
   return (
