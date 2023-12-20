@@ -1,3 +1,4 @@
+import EmailInput from "../../components/Input/EmailInput";
 import Input from "../../components/Input/Input";
 import InviteCard from "../../components/User/InviteCard";
 
@@ -13,7 +14,7 @@ export default function InviteGroupForm() {
             <Input type="text" />
           </div>
           <div className="grow">
-            <Input type="email" />
+            <EmailInput />
           </div>
           <button
             type="submit"
