@@ -1,8 +1,8 @@
 type CheckboxProps = {
-  label: string;
+  label?: string;
 };
 
-export default function Checkbox({ label }: CheckboxProps) {
+export default function CheckboxInput({ label }: CheckboxProps) {
   return (
     <label className="font-handwriting text-2xl flex gap-2 items-center cursor-pointer">
       <input
