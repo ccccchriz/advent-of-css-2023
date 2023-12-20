@@ -8,11 +8,13 @@ type PasswordInputProps = {
 export default function PasswordInput({ id }: PasswordInputProps) {
   let htmlId = "password";
   if (id) htmlId += id;
+
   const [isShowPassword, setIsShowPassword] = useState<Boolean>(false);
+
   return (
     <label className="w-full relative grid cursor-pointer">
       <input
-        type="passowrd"
+        type={isShowPassword ? "text" : "password"}
         id={htmlId}
         name={htmlId}
         size={1}
@@ -28,7 +30,7 @@ export default function PasswordInput({ id }: PasswordInputProps) {
         id="passwordButton"
         className="absolute self-center right-1 p-4"
         onClick={() => {
-          setIsShowPassword((v) => !v);
+          setIsShowPassword((value) => !value);
         }}
       >
         <Icon type={isShowPassword ? "eyeClosed" : "eyeOpened"} />
