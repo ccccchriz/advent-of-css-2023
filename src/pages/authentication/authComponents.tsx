@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
 import { Icon } from "../../components/Icon/Icon";
+import PasswordInput from "../../components/Input/PasswordInput";
 
 export const authComponents = {
   //
@@ -12,7 +13,7 @@ export const authComponents = {
       <>
         <form action="" className="grid gap-4 w-full">
           <Input type="email" />
-          <Input type="password" />
+          <PasswordInput />
           <button
             type="submit"
             className="font-handwriting w-full bg-supernova py-5 rounded-full border-none text-3xl font-bold"
@@ -39,7 +40,7 @@ export const authComponents = {
         <form action="" className="grid gap-4 w-full">
           <Input type="text" />
           <Input type="email" />
-          <Input type="password" />
+          <PasswordInput />
           <button
             type="submit"
             className="font-handwriting w-full bg-supernova py-5 rounded-full border-none text-3xl font-bold"
@@ -118,7 +119,7 @@ export const authComponents = {
     node: (
       <>
         <form action="" className="grid gap-4 w-full">
-          <Input type="password" />
+          <PasswordInput />
           <Input type="file" />
           <button
             type="submit"
