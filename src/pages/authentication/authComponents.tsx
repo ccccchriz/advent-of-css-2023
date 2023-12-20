@@ -3,6 +3,7 @@ import Input from "../../components/Input/Input";
 import { Icon } from "../../components/Icon/Icon";
 import PasswordInput from "../../components/Input/PasswordInput";
 import EmailInput from "../../components/Input/EmailInput";
+import FileInput from "../../components/Input/FileInput";
 
 export const authComponents = {
   //
@@ -121,7 +122,7 @@ export const authComponents = {
       <>
         <form action="" className="grid gap-4 w-full">
           <PasswordInput />
-          <Input type="file" />
+          <FileInput />
           <button
             type="submit"
             className="font-handwriting w-full bg-supernova py-5 rounded-full border-none text-3xl font-bold"
