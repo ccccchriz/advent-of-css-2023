@@ -1,11 +1,16 @@
+import { ReactNode } from "react";
 import Footer from "../components/Footer/Footer";
 import Menu from "../components/Menu/Menu.tsx";
 import UserInfo from "../components/User/UserWithDropdown.tsx";
 
-export default function MainLayout() {
+type MainLayoutProps = {
+  children: ReactNode;
+};
+
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
-      <main className="min-h-screen grid md:grid-cols-[20rem_auto] bg-silverTree dark:bg-nileBlue ">
+      <main className="min-h-screen grid md:grid-cols-[20rem_auto] bg-silverTree dark:bg-nileBlue gap-8">
         <Menu />
         <div className="hidden md:block">
           <img
@@ -23,6 +28,7 @@ export default function MainLayout() {
           <div className="flex w-full justify-end mt-4 -ml-6">
             <UserInfo avatar="avatar/img/avatar-01.png" name="Cody Fisher" />
           </div>
+          {children}
         </div>
       </main>
       <Footer />
