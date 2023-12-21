@@ -40,7 +40,7 @@ export const authComponents = {
     node: (
       <>
         <form action="" className="grid gap-4 w-full">
-          <Input type="text" />
+          <Input type="text" title="name" />
           <EmailInput />
           <PasswordInput />
           <button

@@ -1,26 +1,66 @@
-import { Icon } from "../Icon/Icon";
+import { useRef } from "react";
 
 type inputProp = {
-  type: "text" | "url" | "number" | "tel" | "file";
+  type: "text" | "url" | "number" | "tel";
   id?: number;
+  inFront?: string;
+  title?: string;
+  value?: string;
+  size?: keyof typeof sizes;
+  onChange?: Function;
 };
 
-export default function Input({ type = "text", id }: inputProp) {
-  let htmlId = type;
-  if (id) htmlId += id;
+const sizes = {
+  default: {
+    fontSize: "text-3xl",
+    padding: "p-6",
+  },
+  small: {
+    fontSize: "text-lg",
+    padding: "p-4",
+  },
+};
+
+export default function Input({
+  type = "text",
+  id,
+  inFront,
+  title,
+  value,
+  size = "default",
+  onChange,
+}: inputProp) {
+  const htmlId = id ? `${type}${id}` : type;
+  const inputElement = useRef<HTMLInputElement>(null);
+
   return (
-    <label className="w-full relative grid cursor-pointer">
+    <label className={`w-full flex cursor-pointer ${sizes[size].fontSize}`}>
+      {inFront && (
+        <span
+          className={`font-handwriting font-bold bg-white ${sizes[size].padding}`}
+        >
+          {inFront}
+        </span>
+      )}
       <input
         type={type}
         id={htmlId}
         name={htmlId}
         size={1}
-        placeholder=" "
-        className={`p-6 w-full font-sans text-[1.6875rem] peer invalid:bg-orangeRed transition-all`}
+        value={value}
+        className={`${sizes[size].padding} w-full font-sans relative`}
+        ref={inputElement}
+        onInput={() =>
+          onChange && onChange(id, type, inputElement.current!.value)
+        }
       />
-      <span className="absolute uppercase font-handwriting text-3xl font-bold p-6 transition-all peer-focus:p-1 peer-focus:text-lg peer-[&:not(:placeholder-shown)]:p-1 peer-[&:not(:placeholder-shown)]:text-lg peer-invalid:text-white peer-[&:not(:invalid):not(:placeholder-shown)]:text-spanishGreen">
-        {type}
-      </span>
+      {title != "none" && (
+        <span
+          className={`${sizes[size].padding} absolute uppercase font-handwriting font-bold transition-all `}
+        >
+          {title || type}
+        </span>
+      )}
     </label>
   );
 }

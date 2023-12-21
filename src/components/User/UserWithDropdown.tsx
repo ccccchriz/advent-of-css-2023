@@ -45,11 +45,11 @@ export default function UserInfo({ avatar, name }: UseInfoProp) {
         </p>
       </button>
       <nav
-        className={`top-24 right-6 bg-white p-4 dark:bg-blackPearl dark:text-white  ${
+        className={`top-24 right-6 bg-white p-4 dark:bg-blackPearl dark:text-white z-50 ${
           isExpanded ? "absolute" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-3 ">
+        <ul className="flex flex-col gap-3">
           <li>
             <a href="" className="flex gap-4 text-3xl font-condensed">
               <Icon type="user" style="fill-pastelMagenta" />

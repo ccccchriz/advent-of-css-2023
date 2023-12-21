@@ -10,7 +10,7 @@ type MainLayoutProps = {
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
-      <main className="min-h-screen grid md:grid-cols-[20rem_auto] bg-silverTree dark:bg-nileBlue gap-8">
+      <main className="min-h-screen grid md:grid-cols-[20rem_auto] bg-silverTree dark:bg-nileBlue gap-4">
         <Menu />
         <div className="hidden md:block">
           <img
@@ -25,7 +25,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
           ></img>
         </div>
         <div className="">
-          <div className="flex w-full justify-end mt-4 -ml-6">
+          <div className="flex w-full justify-end mt-16 -ml-4 md:mt-4 md:-ml-6">
             <UserInfo avatar="avatar/img/avatar-01.png" name="Cody Fisher" />
           </div>
           {children}
