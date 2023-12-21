@@ -5,23 +5,33 @@ export default function Menu() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const button = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+
+  const handleKeyboardDisableMenu = (e: KeyboardEvent) => {
+    if (isExpanded == true && e.key == "Escape") {
+      if (button.current != null) button.current.focus();
+      setIsExpanded(false);
+    }
+  };
+
+  const handleMouseDisableMenu = (e: MouseEvent) => {
+    if (menu.current && !menu.current.contains(e.target as Node))
+      setIsExpanded(false);
+  };
 
   useEffect(() => {
-    const handleDisableMenu = (e: KeyboardEvent) => {
-      if (isExpanded == true && e.key == "Escape") {
-        if (button.current != null) button.current.focus();
-        setIsExpanded(false);
-      }
+    document.addEventListener("keydown", handleKeyboardDisableMenu);
+    document.addEventListener("click", handleMouseDisableMenu);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyboardDisableMenu);
+      document.removeEventListener("click", handleMouseDisableMenu);
     };
-
-    document.addEventListener("keydown", handleDisableMenu);
-
-    return () => document.removeEventListener("keydown", handleDisableMenu);
   }, [isExpanded]);
 
   return (
     <>
-      <div className="lg:max-w-md grid absolute">
+      <div className="lg:max-w-md grid absolute" ref={menu}>
         <div
           className={`p-4 z-50 left-0 w-min ${
             isExpanded ? "fixed" : "absolute"
