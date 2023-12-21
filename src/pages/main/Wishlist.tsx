@@ -10,7 +10,7 @@ interface WishlistArray {
 
 function Wishlist() {
   const [wishlist, setWishlist] = useState<WishlistArray[]>([
-    { text: "fff", url: "ff" },
+    { text: "", url: "" },
   ]);
 
   const updateWishlist = (id: number, field: "text" | "url", value: string) => {
