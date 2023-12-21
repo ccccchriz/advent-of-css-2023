@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <Authentication type="accept" />,
   },
   {
-    path: "/wislist/edit",
+    path: "/wishlist/edit",
     element: <Wishlist />,
   },
   {
