@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Authentication from "./pages/authentication/Authentication.tsx";
+import Wishlist from "./pages/main/Wishlist.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/invite/accept",
     element: <Authentication type="accept" />,
+  },
+  {
+    path: "/wislist/edit",
+    element: <Wishlist />,
   },
   {
     path: "*",

@@ -1,9 +1,9 @@
-import Wishlist from "./pages/main/Wishlist";
+import SlideInPanel from "./components/SlideInPanel/SlideInPanel";
 
 function App() {
   return (
     <>
-      <Wishlist />
+      <SlideInPanel />
     </>
   );
 }

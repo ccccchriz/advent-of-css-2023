@@ -92,3 +92,13 @@
   visibility: hidden;
   transform: translateX(-100%);
 }
+
+.panelSlideIn {
+  transform: translateX(0%);
+  visibility: visible;
+}
+
+.panelSlideIn--reverse {
+  visibility: hidden;
+  transform: translateX(100%);
+}
