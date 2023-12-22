@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Input from "../../components/Input/Input";
 import MainLayout from "../MainLayout";
 import { Icon } from "../../components/Icon/Icon";
@@ -20,10 +20,6 @@ function Wishlist() {
       )
     );
   };
-
-  useEffect(() => {
-    console.log(wishlist);
-  }, [wishlist]);
 
   return (
     <>
