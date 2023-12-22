@@ -3,6 +3,7 @@ export const iconTypes = [
   "check",
   "chevron",
   "close",
+  "edit",
   "eyeClosed",
   "eyeOpened",
   "logout",
