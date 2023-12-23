@@ -1,23 +1,31 @@
-import { useEffect, useState, useRef, ReactNode } from "react";
+import { useEffect, useRef, ReactNode } from "react";
 import { Icon } from "../Icon/Icon";
 
 type SlideInPanelProps = {
   children?: ReactNode;
+  isExpanded: Boolean;
+  setIsExpanded: Function;
 };
 
-function SlideInPanel({ children }: SlideInPanelProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+function SlideInPanel({
+  children,
+  isExpanded,
+  setIsExpanded,
+}: SlideInPanelProps) {
   const panel = useRef<HTMLDivElement>(null);
 
   const handleKeyboardDisableMenu = (e: KeyboardEvent) => {
-    if (isExpanded == true && e.key == "Escape") {
+    if (isExpanded && e.key == "Escape") {
       setIsExpanded(false);
     }
   };
 
   const handleMouseDisableMenu = (e: MouseEvent) => {
-    if (panel.current && !panel.current.contains(e.target as Node))
+    if (
+      isExpanded &&
+      panel.current &&
+      !panel.current.contains(e.target as Node)
+    )
       setIsExpanded(false);
   };
 

@@ -8,7 +8,7 @@ interface WishlistArray {
   url: string;
 }
 
-function Wishlist() {
+function EditWishlist() {
   const [wishlist, setWishlist] = useState<WishlistArray[]>([
     { text: "", url: "" },
   ]);
@@ -84,4 +84,4 @@ function Wishlist() {
   );
 }
 
-export default Wishlist;
+export default EditWishlist;
