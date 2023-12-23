@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Wade Warren",
+        "email": "wade.waren@example.com",
+        "status": "online",
+        "avatar": "avatar/img/avatar-01.png",
+        "wishlist": [
+            { "text": "Oppenheimer Blueray", "url": "https://www.amazon.com/Oppenheimer-Ultra-Blu-ray-Digital-UHD/dp/B0CL7JD41F" },
+            { "text": "Barbie Blueray", "url": "https://www.amazon.com/Barbie-Digital-4K-Ultra-UHD/dp/B0CCZQNJ3R" }
+        ]
+    },
+    {
+        "name": "Courtney Henry",
+        "email": "courtney.henry@example.com",
+        "status": "online",
+        "avatar": "avatar/img/avatar-02.png",
+        "wishlist": [
+            { "text": "iPhone 15", "url": "https://www.apple.com/shop/buy-iphone/iphone-15/6.1-inch-display-128gb-green-unlocked" },
+            { "text": "Airpods Pro", "url": "https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro" }
+        ]
+    },
+    {
+        "name": "Marvin McKinney",
+        "email": "marvin.mckinney@example.com",
+        "status": "idle",
+        "avatar": "avatar/img/avatar-03.png",
+        "wishlist": [
+            { "text": "Oppenheimer Blueray", "url": "https://www.amazon.com/Oppenheimer-Ultra-Blu-ray-Digital-UHD/dp/B0CL7JD41F" },
+            { "text": "Barbie Blueray", "url": "https://www.amazon.com/Barbie-Digital-4K-Ultra-UHD/dp/B0CCZQNJ3R" }
+        ]
+    },
+    {
+        "name": "Darrell Steward",
+        "email": "darrell.steward@example.com",
+        "status": "do-not-disturb",
+        "avatar": "avatar/img/avatar-04.png",
+        "wishlist": [
+            { "text": "iPhone 15", "url": "https://www.apple.com/shop/buy-iphone/iphone-15/6.1-inch-display-128gb-green-unlocked" },
+            { "text": "Airpods Pro", "url": "https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro" }
+        ]
+    },
+    {
+        "name": "Jenny Jones",
+        "email": "jenny.jones@example.com",
+        "status": "online",
+        "avatar": "avatar/img/avatar-05.png",
+        "wishlist": [
+            { "text": "Oppenheimer Blueray", "url": "https://www.amazon.com/Oppenheimer-Ultra-Blu-ray-Digital-UHD/dp/B0CL7JD41F" },
+            { "text": "Barbie Blueray", "url": "https://www.amazon.com/Barbie-Digital-4K-Ultra-UHD/dp/B0CCZQNJ3R" }
+        ]
+    },
+    {
+        "name": "Bessie Cooper",
+        "email": "bessie.cooper@example.com",
+        "status": "idle",
+        "avatar": "avatar/img/avatar-06.png",
+        "wishlist": [
+            { "text": "iPhone 15", "url": "https://www.apple.com/shop/buy-iphone/iphone-15/6.1-inch-display-128gb-green-unlocked" },
+            { "text": "Airpods Pro", "url": "https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro" }
+        ]
+    }
+]
