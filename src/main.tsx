@@ -3,7 +3,11 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Authentication from "./pages/authentication/Authentication.tsx";
+import Login from "./pages/authentication/Login.tsx";
+import Register from "./pages/authentication/Register.tsx";
+import Invite from "./pages/authentication/Invite.tsx";
+import InviteAccept from "./pages/authentication/InviteAccept.tsx";
+import InviteReject from "./pages/authentication/InviteReject.tsx";
 import EditWishlist from "./pages/main/EditWishlist.tsx";
 
 const router = createBrowserRouter([
@@ -13,23 +17,23 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Authentication type="login" />,
+    element: <Login />,
   },
   {
     path: "/register",
-    element: <Authentication type="register" />,
+    element: <Register />,
   },
   {
     path: "/invite",
-    element: <Authentication type="invite" />,
+    element: <Invite />,
   },
   {
     path: "/invite/decline",
-    element: <Authentication type="decline" />,
+    element: <InviteReject />,
   },
   {
     path: "/invite/accept",
-    element: <Authentication type="accept" />,
+    element: <InviteAccept />,
   },
   {
     path: "/wishlist/edit",
