@@ -1,8 +1,24 @@
 import { useState } from "react";
 import WishlistDetails from "./components/Wishlist/WishlistDetails";
+import { useLoaderData } from "react-router-dom";
+import MainLayout from "./pages/MainLayout";
+import Avatar from "./components/Avatar/Avatar";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  status: string;
+  avatar: string;
+  wishlist: {
+    text: string;
+    url: string;
+  }[];
+}
 
 function App() {
   const [isWishlistExpanded, setIsWishlistExpanded] = useState<boolean>(false);
+  const [userId, setUserId] = useState<number>(0);
 
   const handleOpenPanel = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -11,33 +27,42 @@ function App() {
     setIsWishlistExpanded(true);
   };
 
-  const testData = {
-    name: "Bessie Cooper",
-    email: "bessie.cooper@example.com",
-    status: "idle",
-    avatar: "avatar/img/avatar-06.png",
-    wishlist: [
-      {
-        text: "iPhone 15",
-        url: "https://www.apple.com/shop/buy-iphone/iphone-15/6.1-inch-display-128gb-green-unlocked",
-      },
-      {
-        text: "Airpods Pods",
-        url: "https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro",
-      },
-    ],
-  };
+  const testData = useLoaderData() as User[];
 
   return (
     <>
-      <button type="button" onClick={(event) => handleOpenPanel(event)}>
-        expand
-      </button>
-      <WishlistDetails
-        data={testData}
-        setIsExpanded={setIsWishlistExpanded}
-        isExpanded={isWishlistExpanded}
-      />
+      <MainLayout>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+          {testData
+            .filter((el) => el.status == "online")
+            .map((el) => (
+              <button
+                type="button"
+                onClick={(event) => {
+                  setUserId(el.id);
+                  handleOpenPanel(event);
+                }}
+                className="bg-white flex items-center text-left"
+              >
+                {el.avatar ? (
+                  <Avatar image={el.avatar} />
+                ) : (
+                  <Avatar letter={el.name[0]} />
+                )}
+                <p className="grid">
+                  <span>{el.name}</span>
+                  <span>{el.email}</span>
+                </p>
+              </button>
+            ))}
+        </div>
+
+        <WishlistDetails
+          data={testData[userId]}
+          setIsExpanded={setIsWishlistExpanded}
+          isExpanded={isWishlistExpanded}
+        />
+      </MainLayout>
     </>
   );
 }

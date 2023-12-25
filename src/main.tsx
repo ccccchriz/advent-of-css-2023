@@ -9,10 +9,12 @@ import Invite from "./pages/authentication/Invite.tsx";
 import InviteAccept from "./pages/authentication/InviteAccept.tsx";
 import InviteReject from "./pages/authentication/InviteReject.tsx";
 import EditWishlist from "./pages/main/EditWishlist.tsx";
+import { loader as rootLoader } from "./loader/loader.ts";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    loader: rootLoader,
     element: <App />,
   },
   {
