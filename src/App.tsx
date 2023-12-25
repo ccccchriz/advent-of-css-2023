@@ -1,6 +1,5 @@
 import { useState } from "react";
 import WishlistDetails from "./components/Wishlist/WishlistDetails";
-import Avatar from "./components/Avatar/Avatar";
 
 function App() {
   const [isWishlistExpanded, setIsWishlistExpanded] = useState<boolean>(false);
@@ -12,13 +11,30 @@ function App() {
     setIsWishlistExpanded(true);
   };
 
+  const testData = {
+    name: "Bessie Cooper",
+    email: "bessie.cooper@example.com",
+    status: "idle",
+    avatar: "avatar/img/avatar-06.png",
+    wishlist: [
+      {
+        text: "iPhone 15",
+        url: "https://www.apple.com/shop/buy-iphone/iphone-15/6.1-inch-display-128gb-green-unlocked",
+      },
+      {
+        text: "Airpods Pods",
+        url: "https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro",
+      },
+    ],
+  };
+
   return (
     <>
-      <button type="button" onClick={(e) => handleOpenPanel(e)}>
+      <button type="button" onClick={(event) => handleOpenPanel(event)}>
         expand
       </button>
       <WishlistDetails
-        avatar={<Avatar image="avatar/img/avatar-01.png" />}
+        data={testData}
         setIsExpanded={setIsWishlistExpanded}
         isExpanded={isWishlistExpanded}
       />
